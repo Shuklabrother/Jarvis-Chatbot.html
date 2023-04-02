@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Jarvis chatbot</title>
+</head>
+<style>
+body{
+  background-color: blue;
+}
+h1{
+  text-align: center;
+  color: white;
+}
+h3{
+  text-align: center;
+  color: white;
+}
+div{
+  text-align: center;
+}
+</style>
+<body>
+  <h1> JARVIS: </h1>
+   <h3 id="chatLog"></h3>
+    <div><input id="userBox" type="text" onkeydown="if(event.keyCode == 13){talk()}"></input></div>
+    <script>
+    var know = {
+            "Hello":"Hi",
+            "Hi":"hello"
+        };
+        function talk() {
+             var user =document.getElementById("userBox") .value;
+           
+            if(user in know){
+                document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+            } else{
+                document.getElementById("chatLog").innerHTML+=" Sorry can you write again ";}}
+    </script>
+  </body>
+</html>
